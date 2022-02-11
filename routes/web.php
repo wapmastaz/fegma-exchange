@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
  */
 // hompage route
 Route::get('/', [FrontendController::class, 'home'])->name('home');
+// about us
+Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
+// FAQ
+Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
+// support
+Route::get('/support', [FrontendController::class, 'support'])->name('support');

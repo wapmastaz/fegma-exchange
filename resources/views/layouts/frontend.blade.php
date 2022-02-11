@@ -2,17 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-
   <title>@yield('page-title')</title>
-
   <link rel="icon" type="image/x-icon" href="{{ asset('frontend/img/logo/favicon.png') }}">
-
   <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/all-fontawesome.min.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/flaticon.css') }}">
@@ -22,16 +18,13 @@
   <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
 </head>
 
-<body>
-
-  <div class="preloader">
+<body class="home-5">
+  {{-- <div class="preloader">
     <div class="loader">
       <div class="loader-box-1"></div>
       <div class="loader-box-2"></div>
     </div>
-  </div>
-
-
+  </div> --}}
   <header class="header">
     <div class="main-navigation">
       <nav class="navbar navbar-expand-lg">
@@ -50,9 +43,9 @@
             <ul class="navbar-nav ms-auto">
               <li class="nav-item"><a class="nav-link" href="#">Sell</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Rates</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Faq</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Support </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ route('faq') }}">Faq</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ route('support') }}">Support </a></li>
             </ul>
             <div class="header-nav-right">
               <div class="header-nav-search">
@@ -85,7 +78,7 @@
 
   </main>
 
-  <footer class="footer-area shape-5">
+  <footer class="footer-area">
     <div class="footer-widget">
       <div class="container">
         <div class="row footer-widget-wrapper pt-100 pb-70">
