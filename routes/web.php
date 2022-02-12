@@ -21,3 +21,7 @@ Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
 Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 // support
 Route::get('/support', [FrontendController::class, 'support'])->name('support');
+// rate
+Route::get('/exchange-rate', [FrontendController::class, 'exchangeRate'])->name('exchange-rate');
+// sell
+Route::get('/sell', [FrontendController::class, 'sell'])->name('sell');

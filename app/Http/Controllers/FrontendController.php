@@ -48,4 +48,26 @@ class FrontendController extends Controller
         return view('/frontend/support');
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function exchangeRate()
+    {
+        // Simply return home page
+        return view('/frontend/rate');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sell()
+    {
+        // Simply return home page
+        return view('/frontend/sell');
+    }
+
 }

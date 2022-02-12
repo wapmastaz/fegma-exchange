@@ -19,17 +19,17 @@
 </head>
 
 <body class="home-5">
-  {{-- <div class="preloader">
+  <div class="preloader">
     <div class="loader">
       <div class="loader-box-1"></div>
       <div class="loader-box-2"></div>
     </div>
-  </div> --}}
+  </div>
   <header class="header">
     <div class="main-navigation">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index-2.html">
+          <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('frontend/img/logo/logo.png') }}" alt="logo">
           </a>
           <div class="mobile-menu-right">
@@ -41,8 +41,8 @@
           </div>
           <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="#">Sell</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Rates</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ route('sell') }}">Sell</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ route('exchange-rate') }}">Rates</a></li>
               <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
               <li class="nav-item"><a class="nav-link" href="{{ route('faq') }}">Faq</a></li>
               <li class="nav-item"><a class="nav-link" href="{{ route('support') }}">Support </a></li>
@@ -52,7 +52,7 @@
                 <a href="#" class="search-box-outer"><i class="far fa-search"></i></a>
               </div>
               <div class="header-btn">
-                <a href="#" class="theme-btn">Trade Now</a>
+                <a href="{{ route('sell') }}" class="theme-btn">Trade Now</a>
               </div>
             </div>
           </div>
@@ -79,94 +79,26 @@
   </main>
 
   <footer class="footer-area">
-    <div class="footer-widget">
-      <div class="container">
-        <div class="row footer-widget-wrapper pt-100 pb-70">
-          <div class="col-md-6 col-lg-4">
-            <div class="footer-widget-box about-us">
-              <a href="#" class="footer-logo">
-                <img src="{{ asset('frontend/img/logo/logo.png') }}" alt="">
-              </a>
-              <p class="mb-20">
-                We are many variations of passages available but the majority have suffered alteration
-                in some form by injected humour.
-              </p>
-              <div class="footer-contact">
-                <ul>
-                  <li><i class="far fa-map-marker-alt"></i>25/B Milford Road, New York, USA</li>
-                  <li><a href="tel:+21236547898"><i class="far fa-phone"></i>+2 123 654 7898</a></li>
-                  <li><a
-                      href="https://live.themewild.com/cdn-cgi/l/email-protection#89fafcf9f9e6fbfdc9ecf1e8e4f9e5eca7eae6e4"><i
-                        class="far fa-envelope"></i><span class="__cf_email__"
-                        data-cfemail="1c6f696c6c736e685c79647d716c7079327f7371">[email&#160;protected]</span></a> </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <div class="footer-widget-box list">
-              <h4 class="footer-widget-title">Company</h4>
-              <ul class="footer-list">
-                <li><a href="#"><i class="fas fa-caret-right"></i> About Us</a></li>
-                <li><a href="#"><i class="fas fa-caret-right"></i> Latest Blog</a></li>
-                <li><a href="#"><i class="fas fa-caret-right"></i> Terms Of Service</a></li>
-                <li><a href="#"><i class="fas fa-caret-right"></i> Privacy Policy</a></li>
-                <li><a href="#"><i class="fas fa-caret-right"></i> Team Members</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <div class="footer-widget-box list">
-              <h4 class="footer-widget-title">Quick Links</h4>
-              <ul class="footer-list">
-                <li><a href="#"><i class="fas fa-caret-right"></i> Contact Us</a></li>
-                <li><a href="#"><i class="fas fa-caret-right"></i> FAQ's</a></li>
-                <li><a href="#"><i class="fas fa-caret-right"></i> Token Sale</a></li>
-                <li><a href="#"><i class="fas fa-caret-right"></i> Help Center</a></li>
-                <li><a href="#"><i class="fas fa-caret-right"></i> Live Chat</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="footer-widget-box list">
-              <h4 class="footer-widget-title">Newsletter</h4>
-              <div class="footer-newsletter">
-                <p>Subscribe Our Newsletter To Get Latest Update And News, Stay Connected With Us.</p>
-                <div class="subscribe-form">
-                  <form action="#">
-                    <div class="form-group">
-                      <input type="email" class="form-control" placeholder="Your Email">
-                      <button class="theme-btn" type="submit">
-                        Subscribe <i class="far fa-paper-plane"></i>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <ul class="footer-social">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <div class="copyright">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 align-self-center">
+          <div class="col-lg-5 align-self-center">
             <p class="copyright-text">
               &copy; Copyright <span id="date"></span> <a href="#"> Cryptox </a> All Rights Reserved.
             </p>
           </div>
-          <div class="col-lg-6 align-self-center">
+          <div class="col-lg-5 align-self-center">
             <ul class="footer-menu">
-              <li><a href="#">Support</a></li>
               <li><a href="#">Terms Of Services</a></li>
               <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 align-self-center">
+            <ul class="footer-social">
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
             </ul>
           </div>
         </div>

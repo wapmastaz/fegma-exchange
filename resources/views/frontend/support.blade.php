@@ -25,34 +25,6 @@
               data-wow-delay=".25s">
               <div class="contact-info">
                 <div class="contact-info-icon">
-                  <i class="fal fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-info-content">
-                  <h5>Office Address</h5>
-                  <p>25/B Milford, New York, USA</p>
-                </div>
-              </div>
-              <div class="contact-info">
-                <div class="contact-info-icon">
-                  <i class="fal fa-phone"></i>
-                </div>
-                <div class="contact-info-content">
-                  <h5>Call Us</h5>
-                  <p>+2 123 654 7898</p>
-                </div>
-              </div>
-              <div class="contact-info">
-                <div class="contact-info-icon">
-                  <i class="fal fa-envelope"></i>
-                </div>
-                <div class="contact-info-content">
-                  <h5>Email Us</h5>
-                  <p><a href="https://live.themewild.com/cdn-cgi/l/email-protection" class="__cf_email__"
-                      data-cfemail="1a73747c755a7f627b776a767f34797577">[email&#160;protected]</a></p>
-                </div>
-              </div>
-              <div class="contact-info">
-                <div class="contact-info-icon">
                   <i class="fal fa-clock"></i>
                 </div>
                 <div class="contact-info-content">
