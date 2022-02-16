@@ -3164,7 +3164,7 @@ button.timeline-nav-button:focus {
     content: "";
     position: absolute;
     background-image: url(../img/shape/shape-2.png);
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     background-repeat: no-repeat;
     background-size: cover;
     left: 0;

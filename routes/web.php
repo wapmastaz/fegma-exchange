@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,10 @@ Route::get('/support', [FrontendController::class, 'support'])->name('support');
 Route::get('/exchange-rate', [FrontendController::class, 'exchangeRate'])->name('exchange-rate');
 // sell
 Route::get('/sell', [FrontendController::class, 'sell'])->name('sell');
+
+Auth::routes();
+
+// ==============ADMIN DASHBOARD ROUTE ======================//
+Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'name' => 'admin'], function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
