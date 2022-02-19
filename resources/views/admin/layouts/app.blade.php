@@ -216,7 +216,51 @@
               </svg>
               <span class="side-menu__label">Dashboard</span></a>
           </li>
-        </ul>
+          <li class="slide">
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void0;">
+              <svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                width="24">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z" />
+              </svg>
+              <span class="side-menu__label">Manage Rates</span><i class="angle fe fe-chevron-right"></i></a>
+            <ul class="slide-menu">
+              <li>
+                <a href="{{ route('rate.index') }}" class="slide-item"> All Rates</a>
+              </li>
+            </ul>
+          </li>
+          <li class="slide">
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void0;">
+              <svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                width="24">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z" />
+              </svg>
+              <span class="side-menu__label">Manage Faqs</span><i class="angle fe fe-chevron-right"></i></a>
+            <ul class="slide-menu">
+              <li>
+                <a href="{{ route('faq.index') }}" class="slide-item"> All Faqs</a>
+              </li>
+            </ul>
+          </li>
+          <li class="slide">
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void0;">
+              <svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                width="24">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z" />
+              </svg>
+              <span class="side-menu__label">Manage Orders</span><i class="angle fe fe-chevron-right"></i></a>
+            <ul class="slide-menu">
+              <li>
+                <a href="{{ route('order.index') }}" class="slide-item"> All Orders</a>
+              </li>
+            </ul>
+          </li>
       </aside>
       <!--aside closed-->
 
@@ -412,11 +456,23 @@
   <a href="#top" id="back-to-top"><i class="fe fe-chevron-up"></i></a>
   <!-- Jquery js-->
   <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
+
   <!-- Bootstrap5 js-->
   <script src="{{ asset('admin/plugins/bootstrap/popper.min.js') }}"></script>
   <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+
+  <!--Othercharts js-->
+  <script src="{{ asset('admin/plugins/othercharts/jquery.sparkline.min.js') }}"></script>
+
+  <!-- Circle-progress js-->
+  <script src="{{ asset('admin/js/circle-progress.min.js') }}"></script>
+
+  <!-- Jquery-rating js-->
+  <script src="{{ asset('admin/plugins/rating/jquery.rating-stars.js') }}"></script>
+
   <!--Sidemenu js-->
   <script src="{{ asset('admin/plugins/sidemenu/sidemenu.js') }}"></script>
+
   <!-- P-scroll js-->
   <script src="{{ asset('admin/p-scrollbar/p-scrollbar.js') }}"></script>
   <script src="{{ asset('admin/p-scrollbar/p-scroll1.js') }}"></script>
@@ -426,12 +482,17 @@
 
   <!--INTERNAL Index js-->
   <script src="{{ asset('admin/js/index1.js') }}"></script>
+
+
   <!-- Simplebar JS -->
   <script src="{{ asset('admin/plugins/simplebar/js/simplebar.min.js') }}"></script>
+
   <!-- Custom js-->
   <script src="{{ asset('admin/js/custom.js') }}"></script>
+
   <!-- Switcher js -->
   <script src="{{ asset('admin/switcher/js/switcher.js') }}"></script>
+
   @stack('lib-script')
 
   @include('partial/notification')

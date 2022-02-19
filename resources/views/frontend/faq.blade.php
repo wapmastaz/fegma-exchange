@@ -35,55 +35,29 @@
             </div>
             <div class="col-md-6">
               <div class="accordion" id="accordion1">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading1">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
-                      aria-expanded="true" aria-controls="collapse1">
-                      <span><i class="far fa-question"></i></span> Do I Need A Business Plan ?
-                    </button>
-                  </h2>
-                  <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
-                    data-bs-parent="#accordion1">
-                    <div class="accordion-body">
-                      We denounce with righteous indignation and dislike men who
-                      are so beguiled and demoralized by the charms of pleasure of the moment, so
-                      blinded by desire.
+                @php
+                  use Illuminate\Support\Str;
+                @endphp
+                @if (count($faqs) > 0)
+                  @foreach ($faqs as $key => $faq)
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#{{ Str::slug($faq->question, '-') }}" aria-expanded="true"
+                          aria-controls="{{ Str::slug($faq->question, '-') }}">
+                          <span><i class="far fa-question"></i></span> {{ $faq->question }}
+                        </button>
+                      </h2>
+                      <div id="{{ Str::slug($faq->question, '-') }}" class="accordion-collapse collapse"
+                        aria-labelledby="heading1" data-bs-parent="#{{ Str::slug($faq->question, '-') }}">
+                        <div class="accordion-body">
+                          {{ $faq->answer }}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                      <span><i class="far fa-question"></i></span> How Long Should A Business Plan Be
-                      ?
-                    </button>
-                  </h2>
-                  <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
-                    data-bs-parent="#accordion1">
-                    <div class="accordion-body">
-                      We denounce with righteous indignation and dislike men who
-                      are so beguiled and demoralized by the charms of pleasure of the moment, so
-                      blinded by desire.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading3">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                      <span><i class="far fa-question"></i></span> What Payment Gateway You Support ?
-                    </button>
-                  </h2>
-                  <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
-                    data-bs-parent="#accordion1">
-                    <div class="accordion-body">
-                      We denounce with righteous indignation and dislike men who
-                      are so beguiled and demoralized by the charms of pleasure of the moment, so
-                      blinded by desire.
-                    </div>
-                  </div>
-                </div>
+                  @endforeach
+                @endif
+
               </div>
             </div>
           </div>

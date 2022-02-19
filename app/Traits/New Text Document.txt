@@ -1,0 +1,24 @@
+CREATE TABLE `bill_transactions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `biller_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `customer_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `company_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `revenue_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `company_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `amount` varchar(1911) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uid` varchar(1911) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE `bill_transactions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `bill_transactions_company_id_foreign` (`company_id`);
+
+
+ALTER TABLE `bill_transactions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+
+ALTER TABLE `bill_transactions`
+  ADD CONSTRAINT `bill_transactions_company_id_foreign` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`);

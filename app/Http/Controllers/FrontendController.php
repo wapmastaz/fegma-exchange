@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
+
 class FrontendController extends Controller
 {
     /**
@@ -33,8 +35,9 @@ class FrontendController extends Controller
      */
     public function faq()
     {
+        $faqs = Faq::where('status', 1)->latest()->get();
         // Simply return home page
-        return view('/frontend/faq');
+        return view('/frontend/faq', ['faqs' => $faqs]);
     }
 
     /**

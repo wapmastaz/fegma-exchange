@@ -122,6 +122,8 @@
   <script src="{{ asset('frontend/js/chart.min.js') }}"></script>
   <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
   <script src="{{ asset('frontend/js/main.js') }}"></script>
+  @include('partial.notification')
+  @stack('page-script')
 </body>
 
 </html>

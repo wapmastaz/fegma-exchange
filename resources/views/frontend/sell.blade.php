@@ -102,86 +102,142 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 mx-auto">
-              <form action="" method="post" class="shadow p-5" style="background-color: #eff0f6;
-                                    border: .01rem solid #e0e1ed;">
+              <form action="{{ route('order.store') }}" method="post" class="shadow p-5"
+                style="background-color: #eff0f6;border: .01rem solid #e0e1ed;" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group mb-4">
                       <label for="title">Title</label>
-                      <select id="title" class="form-control" name="">
+                      <select id="title" class="form-control @error('title') is-invalid @enderror" name="title">
                         <option value="">--choose title--</option>
+                        <option value="mr" @if (old('title') == 'mr') selected @endif>Mr.</option>
+                        <option value="ms" @if (old('title') == 'ms') selected @endif>Ms.</option>
+                        <option value="mrs" @if (old('title') == 'mrs') selected @endif>Mrs.</option>
+                        <option value="prof" @if (old('title') == 'prof') selected @endif>Prof.</option>
+                        <option value="dr" @if (old('title') == 'dr') selected @endif>Dr.</option>
                       </select>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
-                      <label for="first-name">First name</label>
-                      <input id="first-name" class="form-control" type="text" name="first_name">
+                      <label for="first-name">First name <span class="text-danger">*</span> </label>
+                      <input id="first-name" class="form-control @error('first_name') is-invalid @enderror" type="text"
+                        value="{{ old('first_name') }}" name="first_name">
+                      @error('first_name')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
-                      <label for="last-name">Last name</label>
-                      <input id="last-name" class="form-control" type="text" name="last_name">
+                      <label for="last-name">Last name <span class="text-danger">*</span></label>
+                      <input id="last-name" class="form-control @error('last_name') is-invalid @enderror" type="text"
+                        value="{{ old('last_name') }}" name="last_name">
+                      @error('last_name')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
-                      <label for="email-address">Email address</label>
-                      <input id="email-address" class="form-control" type="email" name="email-address">
+                      <label for="email-address">Email address <span class="text-danger">*</span></label>
+                      <input id="email-address" class="form-control @error('email') is-invalid @enderror" type="email"
+                        value="{{ old('email') }}" name="email">
+                      @error('email')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
-                      <label for="mobile">Phone Number</label>
-                      <input id="mobile" class="form-control" type="tel" name="mobile">
+                      <label for="mobile">Phone Number <span class="text-danger">*</span></label>
+                      <input id="mobile" class="form-control @error('mobile') is-invalid @enderror" type="tel"
+                        value="{{ old('mobile') }}" name="mobile">
+                      @error('mobile')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
-                      <label for="state">State</label>
-                      <input id="state" class="form-control" type="text" name="state">
+                      <label for="state">State <span class="text-danger">*</span></label>
+                      <input id="state" class="form-control @error('state') is-invalid @enderror" type="text"
+                        value="{{ old('state') }}" name="state">
+                      @error('state')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
                       <label for="country">Country</label>
                       <select id="country" class="form-control" name="country">
-                        <option>Text</option>
+                        <option value="">--Select Country--</option>
+                        <option value="nigeria">Nigeria</option>
+                        <option value="ghana">Ghana</option>
                       </select>
+                      @error('country')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
-                      <label for="account-number">Bank Account Number</label>
-                      <input id="account-number" class="form-control" type="number" name="account_number">
+                      <label for="account-number">Bank Account Number <span class="text-danger">*</span></label>
+                      <input id="account-number" class="form-control @error('account_number') is-invalid @enderror"
+                        value="{{ old('account_number') }}" type="number" name="account_number">
+                      @error('account_number')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
-                      <label for="bank-name">Bank Name</label>
-                      <input id="bank-name" class="form-control" type="text" name="bank_name">
+                      <label for="bank-name">Bank Name <span class="text-danger">*</span></label>
+                      <input id="bank-name" class="form-control @error('bank_name') is-invalid @enderror" type="text"
+                        value="{{ old('bank_name') }}" name="bank_name">
+                      @error('bank_name')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-group">
-                      <label for="amount">Bitcoin Amount In Dollars </label>
-                      <input id="amount" class="form-control" type="number" min="500" name="amount">
+                      <label for="amount">Bitcoin Amount In Dollars <span class="text-danger">*</span></label>
+                      <input id="amount" class="form-control @error('amount') is-invalid @enderror" type="number"
+                        min="500" name="amount" value="{{ old('amount') }}">
+                      @error('amount')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-group">
+                      <label for="local_amount">Local Amount <span class="text-danger">*</span></label>
+                      <input id="local_amount" class="form-control " type="number" name="local_amount">
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-group">
                       <label for="image">Upload Screenshot</label>
-                      <input id="image" class="form-control-file" type="file" name="image">
+                      <input id="image" class="form-control-file @error('image') is-invalid @enderror" type="file"
+                        name="image">
+                      @error('image')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-check form-group mb-4">
-                      <input class="form-check-input" type="checkbox" value="" id="agree">
+                      <input class="form-check-input" type="checkbox" name="terms" id="agree">
                       <label class="form-check-label" for="agree">
                         I agree with the <a href="#">Terms Of Service.</a>
                       </label>
                       <small>I have read and agree to these terms and conditions set out. </small>
+                      @error('terms')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
                     </div>
                   </div>
                   <button type="submit" class="btn theme-btn">Send Order</button>
@@ -193,5 +249,40 @@
     </div>
   </div>
 
-
 @endsection
+
+@push('page-script')
+  <script>
+    var country = $('#country');
+    var localAmount = $('#local_amount');
+    var amount = $('#amount');
+
+    amount.on('keyup', function() {
+      let value = $(this).val()
+      // console.log(value)
+      // perform ajax Request
+      $.ajax({
+        type: 'POST',
+        url: "{{ route('ajax.get-rate') }}",
+        data: {
+          '_token': '{{ csrf_token() }}',
+          'country': country.val(),
+        },
+        beforeSend: function() {
+          localAmount.attr('disabled', true)
+        },
+        success: function(data) {
+          console.log(data)
+          console.log(value)
+          if (data.message == "success") {
+            var rate = data.data;
+            var valueInLocal = rate.value * value
+            localAmount.val(valueInLocal.toFixed(2))
+          } else {
+            localAmount.val(0)
+          }
+        }
+      });
+    })
+  </script>
+@endpush

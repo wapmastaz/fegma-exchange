@@ -9,9 +9,9 @@
 
 @if (session()->has('notify'))
   <script>
-    $.growl.notice({
-      message: "You have 4 notification"
-    });
+    // $.growl.notice({
+    //   message: "You have 4 notification"
+    // });
     // toastr.error('hello');
     $('.notice').click(function(event) {
       event.preventDefault();
