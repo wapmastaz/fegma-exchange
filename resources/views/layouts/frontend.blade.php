@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{ asset('frontend/css/magnific-popup.min.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+  @stack('page-style')
 </head>
 
 <body class="home-5">
@@ -30,7 +31,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('frontend/img/logo/logo.png') }}" alt="logo">
+            <img src="{{ asset('project-pictures/logo-2.jpg') }}" alt="logo">
           </a>
           <div class="mobile-menu-right">
             <a href="#" class="mobile-search-btn search-box-outer"><i class="far fa-search"></i></a>
@@ -90,8 +91,8 @@
           </div>
           <div class="col-lg-5 align-self-center">
             <ul class="footer-menu">
-              <li><a href="#">Terms Of Services</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="{{ route('terms-condition') }}">Terms and Conditions</a></li>
+              <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="col-lg-2 align-self-center">

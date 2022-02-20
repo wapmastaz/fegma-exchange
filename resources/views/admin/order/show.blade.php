@@ -13,8 +13,19 @@
         <div class="  card-body text-center">
           <div class="pro-user">
             <h4 class="pro-user-username mb-1 font-weight-bold">{{ $order->getNameAttributes() }}</h4>
-            <a href="javascript:void0;" class="btn btn-success mt-3"><i class="fe fe-check me-2"></i>Approve</a>
-            <a href="javascript:void0;" class="btn btn-danger mt-3"><i class="fe fe-trash me-2"></i> Decline</a>
+            @if ($order->status == 1)
+              <button type="button" class="btn btn-success mt-3"><i class="fe fe-check me-2"></i>Order Approved</button>
+            @endif
+            @if ($order->status == 2)
+              <button type="button" class="btn btn-danger mt-3"><i class="fe fe-times me-2"></i>Order Cancelled</button>
+            @endif
+            @if ($order->status == 0)
+              <a class="modal-effect btn btn-success mt-3" data-bs-effect="effect-fall" data-bs-toggle="modal"
+                href="#approve"><i class="fe fe-check me-2"></i>Approve</a>
+              <a class="modal-effect btn btn-danger mt-3" data-bs-effect="effect-fall" data-bs-toggle="modal"
+                href="#decline"><i class="fe fe-trash me-2"></i> Decline</a>
+            @endif
+
           </div>
         </div>
       </div>
@@ -92,7 +103,9 @@
                 <i class="fe fe-building"></i>
               </div>
               <div class="media-body">
-                <h6 class="font-weight-bold mb-1">{{ $order->bank_name }}
+                <h6 class="font-weight-bold mb-1">Bank Name
+                </h6>
+                <h6 class="font-weight-bold">{{ $order->bank_name }}
                 </h6>
               </div>
             </div>
@@ -101,7 +114,9 @@
                 <i class="fe fe-briefcase"></i>
               </div>
               <div class="media-body">
-                <h6 class="font-weight-bold mb-1">{{ $order->account_number }}</h6>
+                <h6 class="font-weight-bold mb-1">Account Number
+                </h6>
+                <h6 class="font-weight-bold">{{ $order->account_number }}</h6>
               </div>
             </div>
           </div>
@@ -119,8 +134,88 @@
           </div>
         </div>
       </div>
+
+      @if ($order->status == 1)
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Approve Screenshort</h3>
+          </div>
+          <div class="card-body">
+            <div class="main-profile-contact-list d-lg-flex">
+              <img src="{{ asset('storage/approve/' . $order->approve_image) }}" class="img-fluid"
+                alt="Approve Screenshort">
+            </div>
+          </div>
+        </div>
+      @endif
+
+      @if ($order->status == 2)
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Order Cancelled Reason</h3>
+          </div>
+          <div class="card-body">
+            <div class="main-profile-contact-list d-lg-flex">
+              <p>{{ $order->reject_message }}</p>
+            </div>
+          </div>
+        </div>
+      @endif
+
     </div>
   </div>
+
+  <!-- MODAL EFFECTS -->
+  <div class="modal fade" id="approve">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modal-content-demo">
+        <div class="modal-header">
+          <h6 class="modal-title">Approve Order</h6><button aria-label="Close" class="btn-close"
+            data-bs-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+
+          <form action="{{ route('order.approve', $order->uid) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+              <label for="approve-image">Approve Image</label>
+              <input id="approve-image" class="form-control" type="file" name="approve_image">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit">Submit Request</button> <button class="btn btn-secondary"
+            data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL EFFECTS -->
+  <div class="modal fade" id="decline">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modal-content-demo">
+        <div class="modal-header">
+          <h6 class="modal-title">Decline Order</h6><button aria-label="Close" class="btn-close"
+            data-bs-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ route('order.decline', $order->uid) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+              <label for="approve-image">Decline Message</label>
+              <textarea name="decline_message" id="decline-message" cols="20" rows="5" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit">Submit Request</button> <button class="btn btn-secondary"
+            data-bs-dismiss="modal" type="button">Close</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- End Page -->
 @endsection
 
 @push('libs-script')

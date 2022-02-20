@@ -26,7 +26,11 @@
           <td>
             @if ($order->status == 1)
               <span class="badge bg-success">Approved</span>
-            @else
+            @endif
+            @if ($order->status == 2)
+              <span class="badge bg-warning">Declined</span>
+            @endif
+            @if ($order->status == 0)
               <span class="badge bg-danger">Pending</span>
             @endif
           </td>
@@ -41,8 +45,8 @@
               <div class="dropdown-menu" style="">
                 <a href="{{ route('order.show', $order->uid) }}" class="dropdown-item"><span
                     class="fe fe-eye"></span> View Details</a>
-                <a href="{{ route('order.edit', $order->uid) }}" class="dropdown-item"><span
-                    class="fe fe-edit"></span> edit</a>
+                {{-- <a href="{{ route('order.edit', $order->uid) }}" class="dropdown-item"><span
+                    class="fe fe-edit"></span> edit</a> --}}
                 <a href="javascript:void(0)" class="dropdown-item" data-bs-toggle="modal"
                   data-bs-target="#my-modal{{ $order->uid }}"><span class="fe fe-trash"></span> delete</a>
               </div>

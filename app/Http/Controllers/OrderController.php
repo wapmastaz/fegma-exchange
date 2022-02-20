@@ -127,8 +127,64 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(Request $request, $uid)
     {
-        //
+        //find rate by uid
+        $order = Rate::findByUid($uid);
+        if ($order) {
+            $order->delete();
+            $notify[] = ['notice', 'Order deleted successful'];
+            // redirect back
+            return Redirect()->back()->with('notify', $notify);
+        }
+    }
+
+    public function approveOrder(Request $request, $uid)
+    {
+        //find order by uid
+        $order = Order::findByUid($uid);
+        if (!$order) {
+            $notify[] = ['error', 'Order Not Found'];
+            return redirect()->back()->with('notify', $notify);
+        }
+
+        if ($request->approve_message != null) {
+            // validate
+            $request->validate([
+                'approve_image' => ['image', 'mimes:png,jpg,gif,jpeg'],
+            ]);
+            // handle file upload
+            $orderImage = $request->approve_image;
+            $fileName = 'order-' . uniqid('FX') . '.' . $orderImage->getClientOriginalExtension();
+            # for save original image
+            $originalPath = $orderImage->storeAs('approve', $fileName, 'public');
+            // update
+            $order->approve_image = $fileName;
+        }
+
+        $order->status = 1;
+        $order->save();
+
+        // send message
+        $notify[] = ['notice', 'Order Approved Successfuly'];
+        return redirect()->back()->with('notify', $notify);
+    }
+
+    public function declineOrder(Request $request, $uid)
+    {
+        //find order by uid
+        $order = Order::findByUid($uid);
+        if (!$order) {
+            $notify[] = ['error', 'Order Not Found'];
+            return redirect()->back()->with('notify', $notify);
+        }
+        // update
+        $order->reject_message = $request->decline_message;
+        $order->status = 2;
+        $order->save();
+
+        // send message
+        $notify[] = ['notice', 'Order Declined Successfuly'];
+        return redirect()->back()->with('notify', $notify);
     }
 }

@@ -13,13 +13,13 @@
     <div class="col-12">
       <!--div-->
       <div class="card">
-        <div class="card-header d-flex justify-content-between">
+        {{-- <div class="card-header d-flex justify-content-between">
           <div class="card-title">{{ $title }}</div>
           <a href="{{ route('rate.create') }}" class="btn btn-primary">
             <i class="fe fe-plus"></i>
             Create new
           </a>
-        </div>
+        </div> --}}
         <div class="card-body">
           <div class="">
             @include('admin.order._table')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use App\Models\Rate;
 
 class FrontendController extends Controller
 {
@@ -58,8 +59,9 @@ class FrontendController extends Controller
      */
     public function exchangeRate()
     {
+        $rates = Rate::all();
         // Simply return home page
-        return view('/frontend/rate');
+        return view('/frontend/rate', compact('rates'));
     }
 
     /**
@@ -71,6 +73,28 @@ class FrontendController extends Controller
     {
         // Simply return home page
         return view('/frontend/sell');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function privacyPolicy()
+    {
+        // Simply return home page
+        return view('/frontend/privacy-policy');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function termsCondition()
+    {
+        // Simply return home page
+        return view('/frontend/terms-and-condition');
     }
 
 }

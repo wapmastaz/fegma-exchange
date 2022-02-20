@@ -45,6 +45,10 @@
                   <th>USD</th>
                 </thead>
                 <tbody>
+                  @if (count($rates) > 0)
+                    @foreach ($rates as $key => $rate)
+                    @endforeach
+                  @endif
                   <tr>
                     <td>
                       <span class="icon pe-2">
@@ -77,10 +81,10 @@
                           <g> </g>
                         </svg>
                       </span>
-                      Nigeria
+                      {{ $rate->country }}
                     </td>
-                    <td>550</td>
-                    <td>$1</td>
+                    <td>{{ number_format($rate->value, 2) ?? '' }}</td>
+                    <td>${{ $rate->amount_in_usd }}</td>
                   </tr>
                 </tbody>
               </table>

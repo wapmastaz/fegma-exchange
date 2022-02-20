@@ -29,7 +29,10 @@ Route::get('/support', [FrontendController::class, 'support'])->name('support');
 Route::get('/exchange-rate', [FrontendController::class, 'exchangeRate'])->name('exchange-rate');
 // sell
 Route::get('/sell', [FrontendController::class, 'sell'])->name('sell');
-Route::get('/sell', [FrontendController::class, 'sell'])->name('sell');
+// privacy policy
+Route::get('/privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('privacy-policy');
+// terms and condition
+Route::get('/Terms-and-condition', [FrontendController::class, 'termsCondition'])->name('terms-condition');
 
 Auth::routes();
 
@@ -66,5 +69,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'name' => 'admin'], f
         Route::get('/edit/{uid}', 'edit')->name('order.edit');
         Route::post('/update/{uid}', 'update')->name('order.update');
         Route::post('/delete/{uid}', 'destroy')->name('order.destroy');
+        Route::post('/approve/{uid}', 'approveOrder')->name('order.approve');
+        Route::post('/decline/{uid}', 'declineOrder')->name('order.decline');
     });
 });

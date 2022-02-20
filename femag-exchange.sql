@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2022 at 12:20 AM
+-- Generation Time: Feb 20, 2022 at 05:55 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -108,6 +108,8 @@ CREATE TABLE `orders` (
   `local_amount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 0,
   `screenshot` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `approve_image` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reject_message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -116,8 +118,9 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `uid`, `title`, `first_name`, `last_name`, `email`, `mobile`, `state`, `country`, `account_number`, `bank_name`, `btc_amount`, `local_amount`, `status`, `screenshot`, `created_at`, `updated_at`) VALUES
-(1, '62111aaa41bbf', 'mr', 'Demola', 'Alaofin', 'admin@gmail.com', '09090000000', 'Ondo State', 'ghana', '2342434353533663', 'Access Bank', '1000', '5003000', 0, 'order-FX62111aaa23634.jpg', '2022-02-19 15:28:26', '2022-02-19 15:28:26');
+INSERT INTO `orders` (`id`, `uid`, `title`, `first_name`, `last_name`, `email`, `mobile`, `state`, `country`, `account_number`, `bank_name`, `btc_amount`, `local_amount`, `status`, `screenshot`, `approve_image`, `reject_message`, `created_at`, `updated_at`) VALUES
+(1, '62111aaa41bbf', 'mr', 'Demola', 'Alaofin', 'admin@gmail.com', '09090000000', 'Ondo State', 'ghana', '2342434353533663', 'Access Bank', '1000', '5003000', 1, 'order-FX62111aaa23634.jpg', 'order-FX621245d81da0b.jpg', NULL, '2022-02-19 15:28:26', '2022-02-20 12:44:56'),
+(2, '621248db38027', 'ms', 'Oluwadamilola', 'Muritala', 'wapmastaz7@gmail.com', '07049968703', 'Ondo State', 'ghana', '0705810722', 'Access Bank plc', '1009', '5048027', 2, 'order-FX621248db2788e.jpg', NULL, 'Testing', '2022-02-20 12:57:47', '2022-02-20 13:18:04');
 
 -- --------------------------------------------------------
 
@@ -279,7 +282,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

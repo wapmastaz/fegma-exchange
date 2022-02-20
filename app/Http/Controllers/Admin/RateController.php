@@ -48,7 +48,7 @@ class RateController extends Controller
      */
     public function store(StoreRate $request)
     {
-        // dd($request->validated());
+        dd($request->validated());
         // create a new rate
         $rate = Rate::create($request->validated());
         if ($rate) {
