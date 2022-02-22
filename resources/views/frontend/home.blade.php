@@ -2,7 +2,6 @@
 
 @section('page-title', 'Homepage')
 
-
 @section('content')
 
   <div class="hero-section">
@@ -26,17 +25,17 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-6">
+          {{-- <div class="col-md-6 col-lg-6">
             <div class="hero-img wow animate__animated animate__fadeInRight" data-wow-duration="1s" data-wow-delay=".25s">
-              <img src="assets/img/hero/hero-2.png" alt="">
+              <img src="{{ asset('project-pictures/bg-removebg-preview.png') }}" alt="">
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
   </div>
 
-  <div class="road-map py-120">
+  <div class="road-map py-120" style="background-color: #f7f7f7">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 mx-auto">
@@ -52,11 +51,10 @@
             <li class="road-map-timeline-item">
               <div class="road-map-item-single">
                 <div class="road-map-item-content blur-bg-2">
-                  <h3>January 15, 2021</h3>
-                  <div class="road-map-item-info">
-                    <h5>Idea Generation</h5>
-                    <p>There are many variations of passages available but the majority have
-                      suffered alteration injected.</p>
+                  <h3>Easy to Use</h3>
+                  <div class="road-map-item-info d-flex justify-content-center align-items-center">
+                    <img src="{{ asset('frontend/img/team/1.png') }}" style="width: 170px" alt="">
+                    <p>A simple interface and easy navigation that offers a seamless trading experience.</p>
                   </div>
                 </div>
               </div>
@@ -64,11 +62,10 @@
             <li class="road-map-timeline-item">
               <div class="road-map-item-single">
                 <div class="road-map-item-content blur-bg-2">
-                  <h3>February 20, 2021</h3>
-                  <div class="road-map-item-info">
-                    <h5>Market Research</h5>
-                    <p>There are many variations of passages available but the majority have
-                      suffered alteration injected.</p>
+                  <h3>Fast Payment</h3>
+                  <div class="road-map-item-info d-flex justify-content-center align-items-center">
+                    <img src="{{ asset('frontend/img/team/2.png') }}" style="width: 170px" alt="">
+                    <p>Sell your bitcoins fast. No more delays in payment.</p>
                   </div>
                 </div>
               </div>
@@ -76,52 +73,66 @@
             <li class="road-map-timeline-item">
               <div class="road-map-item-single">
                 <div class="road-map-item-content blur-bg-2">
-                  <h3>March 12, 2021</h3>
-                  <div class="road-map-item-info">
-                    <h5>Business Plan</h5>
-                    <p>There are many variations of passages available but the majority have
-                      suffered alteration injected.</p>
+                  <h3>Registration Free</h3>
+                  <div class="road-map-item-info d-flex justify-content-center align-items-center">
+                    <img src="{{ asset('frontend/img/team/3.png') }}" style="width: 170px" alt="">
+                    <p>Sit back and relax! No more hassles of registration!</p>
                   </div>
                 </div>
               </div>
             </li>
-            <li class="road-map-timeline-item road-map-timeline-point">
+            <li class="road-map-timeline-item">
               <div class="road-map-item-single">
                 <div class="road-map-item-content blur-bg-2">
-                  <h3>April 29, 2021</h3>
-                  <div class="road-map-item-info">
-                    <h5>Start Development</h5>
-                    <p>There are many variations of passages available but the majority have
-                      suffered alteration injected.</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="road-map-timeline-item road-map-timeline-point">
-              <div class="road-map-item-single">
-                <div class="road-map-item-content blur-bg-2">
-                  <h3>May 18, 2021</h3>
-                  <div class="road-map-item-info">
-                    <h5>Pre Sale Launch</h5>
-                    <p>There are many variations of passages available but the majority have
-                      suffered alteration injected.</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="road-map-timeline-item road-map-timeline-point">
-              <div class="road-map-item-single">
-                <div class="road-map-item-content blur-bg-2">
-                  <h3>June 14, 2021</h3>
-                  <div class="road-map-item-info">
-                    <h5>Launch The Platform</h5>
-                    <p>There are many variations of passages available but the majority have
-                      suffered alteration injected.</p>
+                  <h3>Safe and Secure</h3>
+                  <div class="road-map-item-info d-flex justify-content-center align-items-center">
+                    <img src="{{ asset('frontend/img/team/4.png') }}" style="width: 170px" alt="">
+                    <p>We strive to create a trusted environment where customers feel confident in making transactions.
+                    </p>
                   </div>
                 </div>
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="counter-area pd-50 text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <div class="site-heading text-center">
+            <h2 class="site-title text-white">How It Works </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5 class="text-white">1. Copy Wallet address</h5>
+              <p class="text-white">All you need to do is copy our wallet address, then transfer bitcoins using your
+                bitcoin wallet.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5 class="text-white">2. Input Details</h5>
+              <p class="text-white">Fill out the required information in the exchange form and send your order</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-item">
+            <div class="feature-content">
+              <h5 class="text-white">3. Get Paid</h5>
+              <p class="text-white">Upon verification of your order, we pay the equivalent amount requested to your
+                bank account</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

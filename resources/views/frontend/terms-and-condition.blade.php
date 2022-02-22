@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('page-title', 'About-us')
+@section('page-title', 'Terms and Condition')
 
 @push('page-style')
   <style>

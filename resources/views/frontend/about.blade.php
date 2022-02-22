@@ -29,30 +29,25 @@
           <div class="about-right">
             <div class="site-heading mb-3">
               <span class="site-title-tagline">About Us</span>
-              <h2 class="site-title">We Offer Best ICO Crypto Solutions For You
+              <h2 class="site-title">Good rates and available around the clock
               </h2>
             </div>
-            <p class="about-text">There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by injected humour, or
-              randomised words which don't look even.</p>
+            <p class="about-text">Femag-Exchange is a platform that enables customers to convert their bitcoins
+              to cash at a reasonable price or preferred local currency..</p>
             <div class="about-list-wrapper">
               <ul class="about-list list-unstyled">
                 <li>
                   <div class="icon"><span class="fas fa-check-circle"></span></div>
                   <div class="text">
-                    <p>Take a look at our round up of the best shows</p>
+                    <p>Customers can however sell their bitcoins and have money from the sales of the btc sent to their
+                      bank account.</p>
                   </div>
                 </li>
                 <li>
                   <div class="icon"><span class="fas fa-check-circle"></span></div>
                   <div class="text">
-                    <p>It has survived not only five centuries</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="icon"><span class="fas fa-check-circle"></span></div>
-                  <div class="text">
-                    <p>Lorem Ipsum has been the ndustry standard dummy text</p>
+                    <p>Banks don’t support bitcoin but we offer a secure medium of exchange where bitcoins would be
+                      exchanged with local currency.</p>
                   </div>
                 </li>
               </ul>

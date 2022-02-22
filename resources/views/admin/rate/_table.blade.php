@@ -17,11 +17,11 @@
       @foreach ($rates as $key => $rate)
         <tr>
           <td>{{ ++$key }}</td>
-          <td>{{ $rate->country }}</td>
+          <td>{{ getCountryName($rate->country) }}</td>
           <td>{{ $rate->value ?? '' }}</td>
           <td>{{ $rate->amount_in_usd }}</td>
           <td>
-            @if ($rate->Status)
+            @if ($rate->status == 1)
               <span class="badge bg-success">Published</span>
             @else
               <span class="badge bg-danger">Pending</span>

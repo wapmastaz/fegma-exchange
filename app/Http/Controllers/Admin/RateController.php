@@ -30,9 +30,13 @@ class RateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $rate = new Rate();
+
+        if (!empty($request->old())) {
+            $rate->fill($request->old());
+        }
 
         return view('admin.rate.create', [
             'title' => 'Create Rate',
@@ -48,9 +52,16 @@ class RateController extends Controller
      */
     public function store(StoreRate $request)
     {
-        dd($request->validated());
+        // dd($request->validated());
+        $data = $request->validated();
+        if (getCountryName($data['country']) != false) {
+            $notify[] = ['error', 'Rate for this Country has been set'];
+            // redirect back
+            return Redirect()->back()->with('notify', $notify);
+        }
+        $data['status'] = ($request->status == "pending") ? false : true;
         // create a new rate
-        $rate = Rate::create($request->validated());
+        $rate = Rate::create($data);
         if ($rate) {
             $notify[] = ['notice', 'Rate created successful'];
             // redirect back
@@ -98,7 +109,9 @@ class RateController extends Controller
     {
         //find rate by uid
         $rate = Rate::findByUid($uid);
-        $rate->update($request->validated());
+        $data = $request->validated();
+        $data['status'] = ($request->status == "pending") ? false : true;
+        $rate->update($data);
         $notify[] = ['notice', 'Rate updated successful'];
         // redirect back
         return Redirect()->route('rate.index')->with('notify', $notify);
@@ -137,4 +150,5 @@ class RateController extends Controller
         $response['data'] = $rate;
         return response()->json($response, 200);
     }
+
 }

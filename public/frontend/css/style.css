@@ -130,7 +130,12 @@ label {
     opacity: 1;
 }
 .preloader {
-    background: linear-gradient(to right, #301ea2 0%, #442bcb 100%);
+    background: linear-gradient(
+        to right,
+        #d89d27 0%,
+        #f8d343 50%,
+        #d89d27 100%
+    );
     position: fixed;
     height: 100%;
     width: 100%;
@@ -150,7 +155,7 @@ label {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #00adff;
+    background-color: #d89d27;
     opacity: 0.6;
     position: absolute;
     top: 0;
@@ -240,7 +245,7 @@ label {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    background: rgba(13, 29, 147, 0.64);
+    /* background: rgba(13, 29, 147, 0.64); */
     z-index: -1;
 }
 .shape-1 {
@@ -306,15 +311,15 @@ label {
     margin-bottom: 5px;
     background: linear-gradient(
         to right,
-        #0063e2 0%,
-        #00adff 51%,
-        #0063e2 100%
+        #daa129 0%,
+        #ecbf39 51%,
+        #f3cc3f 100%
     );
 }
 .site-title {
     font-weight: 700;
     text-transform: capitalize;
-    font-size: 48px;
+    font-size: 38px;
     color: #fff;
     margin-top: 5px;
     margin-bottom: 0;
@@ -323,9 +328,9 @@ label {
     color: transparent;
     background: linear-gradient(
         to right,
-        #0063e2 0%,
-        #00adff 51%,
-        #0063e2 100%
+        #daa129 0%,
+        #ecbf39 51%,
+        #f3cc3f 100%
     );
     -moz-background-clip: text;
     -webkit-background-clip: text;
@@ -601,12 +606,11 @@ label {
     z-index: 99;
     font-size: 22px;
     border: none;
-    outline: none;
     background: linear-gradient(
         to right,
-        #0063e2 0%,
-        #00adff 51%,
-        #0063e2 100%
+        #daa129 0%,
+        #ecbf39 51%,
+        #f3cc3f 100%
     );
     color: #fff;
     cursor: pointer;
@@ -652,7 +656,7 @@ label {
     .navbar .nav-item .dropdown-menu::before {
         content: "\f0de";
         position: absolute;
-        color: #0070e7;
+        color: #d89d27;
         font-family: "font awesome 5 pro";
         font-weight: 700;
         font-size: 45px;
@@ -693,9 +697,9 @@ label {
     .navbar .nav-item .dropdown-menu .dropdown-item:hover {
         background: linear-gradient(
             to right,
-            #0063e2 0%,
-            #00adff 80%,
-            #0063e2 100%
+            #d89d27 0%,
+            #f6cf41 50%,
+            #d89d27 100%
         );
         color: #fff;
         padding-left: 33px;
@@ -709,9 +713,9 @@ label {
         position: absolute;
         background: linear-gradient(
             to right,
-            #0063e2 0%,
-            #00adff 50%,
-            #0063e2 100%
+            #d89d27 0%,
+            #f6cf41 50%,
+            #d89d27 100%
         );
         width: 0;
         height: 3px;
@@ -761,6 +765,10 @@ label {
     .navbar .header-btn {
         padding-top: 8px;
     }
+
+    .navbar.fixed-top .nav-item .nav-link {
+        color: #000 !important;
+    }
 }
 .navbar {
     padding-top: 0;
@@ -768,12 +776,13 @@ label {
     z-index: 999;
 }
 .navbar.fixed-top {
-    background: linear-gradient(
+    /* background: linear-gradient(
         to right,
         #160e6f 0%,
         #3e27be 50%,
         #160e6f 100%
-    );
+    ); */
+    background-color: #fff !important;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.17);
     animation: slide-down 0.7s;
 }
@@ -898,15 +907,15 @@ button.navbar-toggler:focus {
     padding-top: 200px;
     padding-bottom: 260px;
     position: relative;
-    /* background: linear-gradient(
+    background: linear-gradient(
         to right,
         #d89d27 0%,
         #f8d343 50%,
         #d89d27 100%
-    ); */
-    /* background: url("../../project-pictures/femag.jpg");
+    );
+    background: url("../../project-pictures/femag.jpg");
     background-size: cover;
-    background-position: top; */
+    background-position: top;
     background-color: #000;
     z-index: 1;
 }
@@ -1545,7 +1554,7 @@ button.navbar-toggler:focus {
 }
 .road-map-timeline {
     width: 100%;
-    max-width: 1020px;
+    /* max-width: 1020px; */
     margin: 0 auto;
 }
 .road-map-timeline-list {
@@ -1567,7 +1576,12 @@ button.navbar-toggler:focus {
     margin-left: -1px;
 }
 .road-map-timeline-list::before {
-    background: linear-gradient(to top, #0063e2 0%, #00adff 51%, #0063e2 100%);
+    background: linear-gradient(
+        to right,
+        #dca42b 0%,
+        #e7b734 51%,
+        #dba22a 100%
+    );
     width: 4px;
     height: 83%;
     left: 50%;
@@ -1583,9 +1597,9 @@ button.navbar-toggler:focus {
     z-index: 2;
     background: linear-gradient(
         to right,
-        #0063e2 0%,
-        #00adff 51%,
-        #0063e2 100%
+        #dca42b 0%,
+        #e7b734 51%,
+        #dba22a 100%
     );
     border-radius: 100%;
     transition: 0.3s;
@@ -1599,9 +1613,9 @@ button.navbar-toggler:focus {
     content: "\f322";
     background: linear-gradient(
         to right,
-        #0063e2 0%,
-        #00adff 51%,
-        #0063e2 100%
+        #dca42b 0%,
+        #e7b734 51%,
+        #dba22a 100%
     );
     display: block;
     width: 45px;
@@ -1610,7 +1624,7 @@ button.navbar-toggler:focus {
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 80px;
+    bottom: 45px;
     margin: 0 auto;
     z-index: 8;
     border-radius: 100%;
@@ -1643,14 +1657,14 @@ button.navbar-toggler:focus {
 }
 .road-map-timeline-list li .road-map-item-content {
     margin-bottom: 25px;
-    text-align: center;
+    text-align: left;
     transition: all 0.5s ease-in-out;
 }
 .road-map-timeline-list li:nth-child(odd) .road-map-item-content::before,
 .road-map-timeline-list li:nth-child(even) .road-map-item-content::before {
     content: "";
     width: 120px;
-    border-top: 4px solid #00a1fb;
+    border-top: 4px solid #dca32a;
     position: absolute;
     top: 33px;
     left: -120px;
@@ -1664,9 +1678,9 @@ button.navbar-toggler:focus {
 .road-map-item-content h3 {
     background: linear-gradient(
         to right,
-        #0063e2 0%,
-        #00adff 51%,
-        #0063e2 100%
+        #dba22a 0%,
+        #eabc37 51%,
+        #f5ce40 100%
     );
     margin: 0;
     padding: 8px 0 12px;
@@ -1682,7 +1696,7 @@ button.navbar-toggler:focus {
 }
 .road-map-item-content h5 {
     margin: 0;
-    color: #fff;
+    /* color: #fff; */
     font-size: 24px;
     line-height: normal;
     padding-bottom: 20px;
@@ -1690,16 +1704,16 @@ button.navbar-toggler:focus {
 }
 .road-map-item-content p {
     margin: 0;
-    color: #fff;
+    /* color: #fff; */
     font-size: 18px;
     line-height: 29px;
     font-weight: 400;
 }
 .road-map-item-info {
-    max-width: 290px;
+    /* max-width: 290px; */
     margin: 0 auto;
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px 10;
+    text-align: left;
 }
 .road-map-timeline-list li.road-map-timeline-point::before {
     content: "\f111";
@@ -1735,7 +1749,7 @@ button.navbar-toggler:focus {
     padding-top: 16%;
 }
 .road-map-timeline ul li:nth-child(2):before {
-    top: 42.5%;
+    top: 53.5%;
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
     .road-map-timeline-list li .road-map-item-content {
@@ -2208,7 +2222,27 @@ button.timeline-nav-button:focus {
         #3e27be 50%,
         #160e6f 100%
     );
+    background: url("../../project-pictures/logo-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
     z-index: 1;
+    z-index: 1;
+}
+
+.counter-area::before {
+    content: "";
+    position: absolute;
+    /* background-image: url(../img/shape/shape-2.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 .counter-box {
     text-align: center;
@@ -2778,11 +2812,11 @@ button.timeline-nav-button:focus {
     border-radius: 33% 66% 70% 30%/49% 62% 38% 51%;
 }
 .contact-info h5 {
-    color: #fff;
+    /* color: #fff; */
     margin-bottom: 5px;
 }
 .contact-info p {
-    color: #fff;
+    /* color: #fff; */
 }
 @media all and (max-width: 991px) {
     .contact-wrapper {
@@ -3117,6 +3151,7 @@ button.timeline-nav-button:focus {
     background-color: transparent;
     box-shadow: inset 0 -1px 0 rgb(0 0 0/13%);
 }
+
 .faq-area .accordion-button {
     border-radius: 0 !important;
     font-weight: 700;
@@ -3671,7 +3706,7 @@ button.timeline-nav-button:focus {
     font-size: 16px;
 }
 .copyright .copyright-text a {
-    color: #00adff;
+    color: #dca32a;
     font-weight: 600;
 }
 .footer-widget-title {
@@ -4158,15 +4193,20 @@ button.timeline-nav-button:focus {
     display: none;
 }
 .home-5 .hero-wrapper {
-    padding-top: 180px;
-    padding-bottom: 150px;
+    padding-top: 200px;
+    padding-bottom: 200px;
     position: relative;
     background: linear-gradient(
         to right,
-        #0e0061 0%,
-        #130274 50%,
-        #0e0061 100%
+        #d89d27 0%,
+        #f8d343 50%,
+        #d89d27 100%
     );
+    background: url("../../project-pictures/bg.jpg");
+    background-size: cover;
+    background-position: top;
+    background-color: #000;
+    z-index: 1;
 }
 .home-5 .hero-wrapper::before {
     content: "";
@@ -4180,20 +4220,22 @@ button.timeline-nav-button:focus {
     width: 100%;
     height: 100%;
     z-index: -1;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 .home-5 .navbar.fixed-top {
-    background: linear-gradient(
+    /* background: linear-gradient(
         to right,
         #0e0061 0%,
         #130274 50%,
         #0e0061 100%
-    );
+    ); */
+    background-color: #fff !important;
 }
 .home-5 .footer-area {
     background: #130273;
 }
 .home-5 .copyright {
-    background: #0f0164;
+    background: #000;
 }
 .home-5 .feature-item {
     /* background: #0e0061; */
@@ -4219,7 +4261,7 @@ button.timeline-nav-button:focus {
     color: #1f2471;
 }
 .home-5 .road-map-item-content {
-    background: #0e0061;
+    background: #fff;
 }
 .home-5 .download-content p {
     color: #1f2471;

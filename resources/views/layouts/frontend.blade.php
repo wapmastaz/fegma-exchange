@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@yield('page-title')</title>
-  <link rel="icon" type="image/x-icon" href="{{ asset('frontend/img/logo/favicon.png') }}">
+  <title>Femag-Exchange || @yield('page-title')</title>
+  <link rel="icon" type="image/x-icon" href="{{ asset('project-pictures/logo.jpg') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/all-fontawesome.min.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/flaticon.css') }}">
@@ -20,12 +20,7 @@
 </head>
 
 <body class="home-5">
-  <div class="preloader">
-    <div class="loader">
-      <div class="loader-box-1"></div>
-      <div class="loader-box-2"></div>
-    </div>
-  </div>
+
   <header class="header">
     <div class="main-navigation">
       <nav class="navbar navbar-expand-lg">
@@ -49,9 +44,6 @@
               <li class="nav-item"><a class="nav-link" href="{{ route('support') }}">Support </a></li>
             </ul>
             <div class="header-nav-right">
-              <div class="header-nav-search">
-                <a href="#" class="search-box-outer"><i class="far fa-search"></i></a>
-              </div>
               <div class="header-btn">
                 <a href="{{ route('sell') }}" class="theme-btn">Trade Now</a>
               </div>
@@ -61,17 +53,6 @@
       </nav>
     </div>
   </header>
-
-
-  <div class="search-popup">
-    <button class="close-search"><span class="far fa-times"></span></button>
-    <form action="#">
-      <div class="form-group">
-        <input type="search" name="search-field" placeholder="Search Here..." required>
-        <button type="submit"><i class="far fa-search"></i></button>
-      </div>
-    </form>
-  </div>
 
   <main class="main">
 

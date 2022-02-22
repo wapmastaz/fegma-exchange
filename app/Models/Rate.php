@@ -10,6 +10,6 @@ class Rate extends Model
 {
     use HasFactory, UUIDTrait;
     protected $fillable = [
-        'country', 'value', 'amount_in_usd',
+        'country', 'value', 'amount_in_usd', 'status',
     ];
 }

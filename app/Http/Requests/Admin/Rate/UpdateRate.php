@@ -26,6 +26,7 @@ class UpdateRate extends FormRequest
         return [
             'country' => ['required'],
             'value' => ['required'],
+            'status' => ['required'],
             'amount_in_usd' => ['required'],
         ];
     }

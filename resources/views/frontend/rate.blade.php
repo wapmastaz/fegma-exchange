@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('page-title', 'About-us')
+@section('page-title', 'Rate')
 
 
 @section('content')
@@ -47,45 +47,20 @@
                 <tbody>
                   @if (count($rates) > 0)
                     @foreach ($rates as $key => $rate)
+                      <tr>
+                        <td>
+                          <span class="icon pe-2">
+                            <img src="{{ asset('country/' . $rate->country . '.svg') }}"
+                              style="width: 20px; height: 20px;" alt="{{ getCountryName($rate->country) }} Flag">
+                          </span>
+                          {{ getCountryName($rate->country) }}
+                        </td>
+                        <td>{{ number_format($rate->value, 2) ?? '' }}</td>
+                        <td>${{ $rate->amount_in_usd }}</td>
+                      </tr>
                     @endforeach
                   @endif
-                  <tr>
-                    <td>
-                      <span class="icon pe-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1"
-                          x="0px" y="0px" viewBox="0 0 512 512"
-                          style="enable-background:new 0 0 512 512; width: 30px; height: 30px" xml:space="preserve">
-                          <circle style="fill:#F0F0F0;" cx="256" cy="256" r="256"></circle>
-                          <g>
-                            <path style="fill:#6DA544;"
-                              d="M0,256c0,110.072,69.472,203.906,166.957,240.078V15.924C69.472,52.094,0,145.93,0,256z">
-                            </path>
-                            <path style="fill:#6DA544;"
-                              d="M512,256c0-110.07-69.472-203.906-166.957-240.076v480.155C442.528,459.906,512,366.072,512,256z">
-                            </path>
-                          </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                          <g> </g>
-                        </svg>
-                      </span>
-                      {{ $rate->country }}
-                    </td>
-                    <td>{{ number_format($rate->value, 2) ?? '' }}</td>
-                    <td>${{ $rate->amount_in_usd }}</td>
-                  </tr>
+
                 </tbody>
               </table>
             </div>
