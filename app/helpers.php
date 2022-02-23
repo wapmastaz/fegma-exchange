@@ -240,11 +240,13 @@ if (!function_exists('countryArray')) {
 if (!function_exists('getCountryName')) {
     function getCountryName($value)
     {
+        // return $value;
         foreach (countryArray() as $key => $country) {
             if (strtolower($key) == $value) {
                 return $country;
             }
         }
         return false;
+
     }
 }

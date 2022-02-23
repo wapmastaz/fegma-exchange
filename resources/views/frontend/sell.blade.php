@@ -174,8 +174,15 @@
                       <label for="country">Country</label>
                       <select id="country" class="form-control" name="country">
                         <option value="">--Select Country--</option>
-                        <option value="nigeria">Nigeria</option>
-                        <option value="ghana">Ghana</option>
+
+                        @foreach ($rates as $rate)
+                          @if (in_array(getCountryName($rate->country), countryArray()))
+                            )
+                            <option value="{{ $rate->country }}">{{ getCountryName($rate->country) }}</option>
+                          @endif
+                        @endforeach
+
+
                       </select>
                       @error('country')
                         <small class="form-text text-danger">{{ $message }}</small>

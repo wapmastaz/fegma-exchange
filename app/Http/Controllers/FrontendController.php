@@ -71,8 +71,9 @@ class FrontendController extends Controller
      */
     public function sell()
     {
+        $rates = Rate::where('status', 1)->get();
         // Simply return home page
-        return view('/frontend/sell');
+        return view('/frontend/sell', compact('rates'));
     }
 
     /**

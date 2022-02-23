@@ -71,7 +71,7 @@
                   <td class="">
                     <span class="font-weight-semibold w-50">Country </span>
                   </td>
-                  <td class="">{{ $order->country }}</td>
+                  <td class="">{{ getCountryName($order->country) }}</td>
                 </tr>
                 <tr>
                   <td class="">

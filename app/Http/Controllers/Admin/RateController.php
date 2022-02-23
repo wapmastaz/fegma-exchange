@@ -52,9 +52,11 @@ class RateController extends Controller
      */
     public function store(StoreRate $request)
     {
-        // dd($request->validated());
+
         $data = $request->validated();
-        if (getCountryName($data['country']) != false) {
+        // find rate by country
+        $rate = Rate::where('country', $data['country'])->first();
+        if ($rate != null) {
             $notify[] = ['error', 'Rate for this Country has been set'];
             // redirect back
             return Redirect()->back()->with('notify', $notify);

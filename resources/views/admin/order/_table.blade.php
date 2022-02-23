@@ -22,7 +22,7 @@
           <td>{{ $order->email }}</td>
           <td>{{ $order->mobile }}</td>
           <td>{{ $order->state }}</td>
-          <td>{{ $order->country }}</td>
+          <td>{{ getCountryName($order->country) }}</td>
           <td>
             @if ($order->status == 1)
               <span class="badge bg-success">Approved</span>

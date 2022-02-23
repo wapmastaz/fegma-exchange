@@ -7,8 +7,7 @@
         <option value="">--Select--</option>
         @foreach (countryArray() as $key => $country)
           <option value="{{ strtolower($key) }}" @if ($rate->country == strtolower($key)) selected @endif>
-            <img src="{{ asset('country/' . strtolower($key) . '.svg') }}" style="width: 20px; height: 20px;"
-              alt="{{ $country }} Flag"> {{ $country }}
+            {{ $country }}
           </option>
         @endforeach
 
