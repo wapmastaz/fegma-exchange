@@ -59,7 +59,7 @@ class FrontendController extends Controller
      */
     public function exchangeRate()
     {
-        $rates = Rate::all();
+        $rates = Rate::where('status', 1)->get();
         // Simply return home page
         return view('/frontend/rate', compact('rates'));
     }

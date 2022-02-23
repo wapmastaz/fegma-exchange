@@ -24,7 +24,6 @@ class UpdateRate extends FormRequest
     public function rules()
     {
         return [
-            'country' => ['required'],
             'value' => ['required'],
             'status' => ['required'],
             'amount_in_usd' => ['required'],
