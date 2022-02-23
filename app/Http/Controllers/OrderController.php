@@ -148,7 +148,7 @@ class OrderController extends Controller
             return redirect()->back()->with('notify', $notify);
         }
 
-        if ($request->approve_message != null) {
+        if ($request->approve_image != null) {
             // validate
             $request->validate([
                 'approve_image' => ['image', 'mimes:png,jpg,gif,jpeg'],
@@ -160,8 +160,9 @@ class OrderController extends Controller
             $originalPath = $orderImage->storeAs('approve', $fileName, 'public');
             // update
             $order->approve_image = $fileName;
-        }
 
+        }
+        $order->approve_message = $request->approve_message;
         $order->status = 1;
         $order->save();
 
@@ -177,6 +178,20 @@ class OrderController extends Controller
         if (!$order) {
             $notify[] = ['error', 'Order Not Found'];
             return redirect()->back()->with('notify', $notify);
+        }
+        if ($request->decline_image != null) {
+            // validate
+            $request->validate([
+                'decline_image' => ['image', 'mimes:png,jpg,gif,jpeg'],
+            ]);
+            // handle file upload
+            $orderImage = $request->decline_image;
+            $fileName = 'order-' . uniqid('FX') . '.' . $orderImage->getClientOriginalExtension();
+            # for save original image
+            $originalPath = $orderImage->storeAs('decline', $fileName, 'public');
+            // update
+            $order->reject_image = $fileName;
+
         }
         // update
         $order->reject_message = $request->decline_message;

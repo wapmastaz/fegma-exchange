@@ -41,6 +41,10 @@ Route::post('/order/store', [OrderController::class, 'store'])->name('order.stor
 // ==============ADMIN DASHBOARD ROUTE ======================//
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'name' => 'admin'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/profile-settings', [DashboardController::class, 'profile'])->name('profile');
+    // changePassword
+    Route::post('/change-password/{id}', [DashboardController::class, 'changePassword'])->name('change-password');
+    Route::post('/update-profile/{id}', [DashboardController::class, 'updateProfile'])->name('update-profile');
     // :::::::::::Rate ROUTES:::::::::::
     Route::controller(RateController::class)->prefix('rate')->group(function () {
         Route::get('/all', 'index')->name('rate.index');

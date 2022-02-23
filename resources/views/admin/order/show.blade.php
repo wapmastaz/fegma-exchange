@@ -141,9 +141,24 @@
             <h3 class="card-title">Approve Screenshort</h3>
           </div>
           <div class="card-body">
-            <div class="main-profile-contact-list d-lg-flex">
-              <img src="{{ asset('storage/approve/' . $order->approve_image) }}" class="img-fluid"
-                alt="Approve Screenshort">
+            <div class="main-profile-contact-list">
+              @if ($order->approve_image == null)
+                <h4 class="text-danger">No Image Provided</h4>
+              @else
+                <img src="{{ asset('storage/approve/' . $order->approve_image) }}" class="img-fluid"
+                  alt="Approve Screenshort">
+              @endif
+              <hr>
+              <div class="mt-5">
+                <h4 class="text-primary">Approve Message</h4>
+                @if ($order->approve_message == null)
+                  <p><small>Not provided</small></p>
+                @else
+                  {{ $order->approve_message }}
+                @endif
+              </div>
+
+
             </div>
           </div>
         </div>
@@ -155,8 +170,24 @@
             <h3 class="card-title">Order Cancelled Reason</h3>
           </div>
           <div class="card-body">
-            <div class="main-profile-contact-list d-lg-flex">
-              <p>{{ $order->reject_message }}</p>
+            <div class="main-profile-contact-list">
+              @if ($order->reject_image == null)
+                <h4 class="text-danger">No Image Provided</h4>
+              @else
+                <img src="{{ asset('storage/decline/' . $order->reject_image) }}" class="img-fluid"
+                  alt="Approve Screenshort">
+              @endif
+              <hr>
+              <div class="mt-5">
+                <h4 class="text-primary">Decline Message</h4>
+                @if ($order->reject_message == null)
+                  <p><small>Not Provided</small></p>
+                @else
+                  {{ $order->reject_message }}
+                @endif
+              </div>
+
+
             </div>
           </div>
         </div>
@@ -177,6 +208,10 @@
 
           <form action="{{ route('order.approve', $order->uid) }}" method="post" enctype="multipart/form-data">
             @csrf
+            <div class="form-group">
+              <label for="approve-message">Approve Message</label>
+              <textarea id="approve-message" class="form-control" cols="20" rows="5" name="approve_message"></textarea>
+            </div>
             <div class="form-group">
               <label for="approve-image">Approve Image</label>
               <input id="approve-image" class="form-control" type="file" name="approve_image">
@@ -205,6 +240,10 @@
             <div class="form-group">
               <label for="approve-image">Decline Message</label>
               <textarea name="decline_message" id="decline-message" cols="20" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="decline-image">Decline Image</label>
+              <input id="decline-image" class="form-control" type="file" name="decline_image">
             </div>
         </div>
         <div class="modal-footer">
