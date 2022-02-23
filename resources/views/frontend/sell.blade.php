@@ -265,9 +265,17 @@
     var amount = $('#amount');
 
     amount.on('keyup', function() {
-      let value = $(this).val()
+      var value = $(this).val()
       // console.log(value)
       // perform ajax Request
+      getLocalAmount(value)
+    })
+
+    country.on('change', function() {
+      getLocalAmount(amount.val())
+    })
+
+    function getLocalAmount(value) {
       $.ajax({
         type: 'POST',
         url: "{{ route('ajax.get-rate') }}",
@@ -290,6 +298,6 @@
           }
         }
       });
-    })
+    }
   </script>
 @endpush

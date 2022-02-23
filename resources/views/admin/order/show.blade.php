@@ -19,12 +19,11 @@
             @if ($order->status == 2)
               <button type="button" class="btn btn-danger mt-3"><i class="fe fe-times me-2"></i>Order Cancelled</button>
             @endif
-            @if ($order->status == 0)
-              <a class="modal-effect btn btn-success mt-3" data-bs-effect="effect-fall" data-bs-toggle="modal"
-                href="#approve"><i class="fe fe-check me-2"></i>Approve</a>
-              <a class="modal-effect btn btn-danger mt-3" data-bs-effect="effect-fall" data-bs-toggle="modal"
-                href="#decline"><i class="fe fe-trash me-2"></i> Decline</a>
-            @endif
+            <hr>
+            <a class="modal-effect btn btn-success mt-3" data-bs-effect="effect-fall" data-bs-toggle="modal"
+              href="#approve"><i class="fe fe-check me-2"></i>Approve</a>
+            <a class="modal-effect btn btn-danger mt-3" data-bs-effect="effect-fall" data-bs-toggle="modal"
+              href="#decline"><i class="fe fe-trash me-2"></i> Decline</a>
 
           </div>
         </div>
