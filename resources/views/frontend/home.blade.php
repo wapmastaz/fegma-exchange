@@ -142,13 +142,13 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="download-img">
-            <img src="{{ asset('frontend/img/download/02.png') }}" alt="">
+            <img src="{{ asset('project-pictures/iphonex.png') }}" alt="">
           </div>
         </div>
         <div class="col-lg-6">
           <div class="download-content">
             <div class="site-heading mb-3">
-              <span class="site-title-tagline">Cryptox App</span>
+              <span class="site-title-tagline">Femag-Exchange App</span>
               <h2 class="site-title my-3">Download Our <span>App</span></h2>
             </div>
             <p class="about-text">There are many variations of passages of Lorem Ipsum available,
@@ -161,8 +161,8 @@
                 <span class="download-btn-content">
                   <span class="fab fa-google-play download-btn-icon"></span>
                   <span class="download-text">
-                    <span class="download-text-subtitle">Get It On</span>
-                    <span class="download-text-title">Google Play</span>
+                    {{-- <span class="download-text-subtitle">Get It On</span> --}}
+                    <span class="download-text-title">coming Soon</span>
                   </span>
                 </span>
               </a>
@@ -170,8 +170,8 @@
                 <span class="download-btn-content">
                   <span class="fab fa-apple download-btn-icon"></span>
                   <span class="download-text">
-                    <span class="download-text-subtitle">Get It On</span>
-                    <span class="download-text-title">App Store</span>
+                    {{-- <span class="download-text-subtitle">Get It On</span> --}}
+                    <span class="download-text-title">coming Soon</span>
                   </span>
                 </span>
               </a>

@@ -3,9 +3,10 @@
     <tr>
       <th class="wd-15p text-white border-bottom-0">#</th>
       <th class="wd-15p text-white border-bottom-0">Name</th>
-      <th class="wd-20p text-white border-bottom-0">Email</th>
+      {{-- <th class="wd-20p text-white border-bottom-0">Email</th> --}}
       <th class="wd-20p text-white border-bottom-0">Phone</th>
-      <th class="wd-20p text-white border-bottom-0">state</th>
+      <th class="wd-20p text-white border-bottom-0">Amount (USD)</th>
+      <th class="wd-20p text-white border-bottom-0">Local Amount</th>
       <th class="wd-20p text-white border-bottom-0">Country</th>
       <th class="wd-20p text-white border-bottom-0">Status</th>
       <th class="wd-15p text-white border-bottom-0">Created At</th>
@@ -19,10 +20,10 @@
         <tr>
           <td>{{ ++$key }}</td>
           <td>{{ $order->getNameAttributes() }}</td>
-          <td>{{ $order->email }}</td>
           <td>{{ $order->mobile }}</td>
-          <td>{{ $order->state }}</td>
-          <td>{{ getCountryName($order->country) }}</td>
+          <td class="">${{ number_format($order->btc_amount, 2) }}</td>
+          <td class="">{!! moneyFormat($order->country, $order->local_amount) !!}</td>
+          <td>{{ getCountryData($order->country)['countryname'] }}</td>
           <td>
             @if ($order->status == 1)
               <span class="badge bg-success">Approved</span>

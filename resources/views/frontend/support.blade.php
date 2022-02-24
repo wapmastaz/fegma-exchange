@@ -15,7 +15,6 @@
     </div>
   </div>
 
-
   <div class="contact-area py-120">
     <div class="container">
       <div class="contact-wrapper">
@@ -32,7 +31,27 @@
                   <p>Sun - Fri (08AM - 10PM)</p>
                 </div>
               </div>
+              <div class="contact-info">
+                <div class="contact-info-icon">
+                  <i class="fal fa-phone"></i>
+                </div>
+                <div class="contact-info-content">
+                  <h5>Call Us</h5>
+                  <p>+2 123 654 7898</p>
+                </div>
+              </div>
+              <div class="contact-info">
+                <div class="contact-info-icon">
+                  <i class="fal fa-envelope"></i>
+                </div>
+                <div class="contact-info-content">
+                  <h5>Email Us</h5>
+                  <p><a href="https://live.themewild.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                      data-cfemail="1a73747c755a7f627b776a767f34797577">[email&#160;protected]</a></p>
+                </div>
+              </div>
             </div>
+
           </div>
           <div class="col-md-8">
             <div class="contact-form wow animate__animated animate__fadeInUp" data-wow-duration="1s"

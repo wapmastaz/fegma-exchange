@@ -20,7 +20,12 @@
 </head>
 
 <body class="home-5">
-
+  <div class="preloader">
+    <div class="loader">
+      <div class="loader-box-1"></div>
+      <div class="loader-box-2"></div>
+    </div>
+  </div>
   <header class="header">
     <div class="main-navigation">
       <nav class="navbar navbar-expand-lg">

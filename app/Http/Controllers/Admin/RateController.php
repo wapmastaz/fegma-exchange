@@ -95,7 +95,7 @@ class RateController extends Controller
         $rate = Rate::findByUid($uid);
 
         return view('admin.rate.edit', [
-            'title' => 'Edit Rate: ' . $rate->country,
+            'title' => 'Edit Rate: ' . getCountryData($rate->country)['countryname'],
             'rate' => $rate,
         ]);
     }
@@ -150,6 +150,7 @@ class RateController extends Controller
 
         $response['message'] = 'success';
         $response['data'] = $rate;
+        $response['currency'] = getCountryData($rate->country)['symbol'];
         return response()->json($response, 200);
     }
 

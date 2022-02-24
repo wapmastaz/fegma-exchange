@@ -112,14 +112,14 @@
         <div class="form-group text-center mb-3">
           <button class="btn btn-primary w-100 br-7" type="submit">Log In</button>
         </div>
-        <div class="form-group fs-13 text-center">
+        {{-- <div class="form-group fs-13 text-center">
           Forget Password ?
-        </div>
-        @if (Route::has('password.request'))
+        </div> --}}
+        {{-- @if (Route::has('password.request'))
           <div class="form-group fs-14 text-center font-weight-bold">
             <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
           </div>
-        @endif
+        @endif --}}
 
       </form>
     </div>

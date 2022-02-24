@@ -4,7 +4,7 @@
       <th class="wd-15p text-white border-bottom-0">#</th>
       <th class="wd-15p text-white border-bottom-0">Country</th>
       <th class="wd-20p text-white border-bottom-0">Value</th>
-      <th class="wd-20p text-white border-bottom-0">Amount</th>
+      <th class="wd-20p text-white border-bottom-0">Amount(USD)</th>
       <th class="wd-20p text-white border-bottom-0">Status</th>
       <th class="wd-15p text-white border-bottom-0">Created At</th>
       <th class="wd-15p text-white border-bottom-0">Updated At</th>
@@ -17,9 +17,9 @@
       @foreach ($rates as $key => $rate)
         <tr>
           <td>{{ ++$key }}</td>
-          <td>{{ getCountryName($rate->country) }}</td>
-          <td>{{ $rate->value ?? '' }}</td>
-          <td>{{ $rate->amount_in_usd }}</td>
+          <td>{{ getCountryData($rate->country)['countryname'] }}</td>
+          <td>{!! moneyFormat($rate->country, $rate->value) !!}</td>
+          <td>{{ '$' . number_format($rate->amount_in_usd, 2) }}</td>
           <td>
             @if ($rate->status == 1)
               <span class="badge bg-success">Published</span>
@@ -48,7 +48,8 @@
                   <div class="modal-body">
                     <p class="font-bold">
                       Are you sure you want to delete Rate:
-                      <span class="text-danger"><strong>{{ $rate->country }}</strong></span>
+                      <span
+                        class="text-danger"><strong>{{ getCountryData($rate->country)['countryname'] }}</strong></span>
                     </p>
                   </div>
                   <div class="modal-footer">

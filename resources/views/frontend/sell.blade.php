@@ -222,7 +222,8 @@
                   <div class="col-md-6 mb-4">
                     <div class="form-group">
                       <label for="local_amount">Local Amount <span class="text-danger">*</span></label>
-                      <input id="local_amount" class="form-control " type="number" name="local_amount">
+                      <div class="form-control" style="height: 38px; background-color: darkgray;" id="local_amount">0.00
+                      </div>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
@@ -292,7 +293,7 @@
           if (data.message == "success") {
             var rate = data.data;
             var valueInLocal = rate.value * value
-            localAmount.val(valueInLocal.toFixed(2))
+            localAmount.html(data.currency + '' + valueInLocal.toFixed(2))
           } else {
             localAmount.val(0)
           }

@@ -52,13 +52,13 @@
                   <td class="">
                     <span class="font-weight-semibold w-50">Amount in USD </span>
                   </td>
-                  <td class="">{{ number_format($order->btc_amount, 2) }}</td>
+                  <td class="">${{ number_format($order->btc_amount, 2) }}</td>
                 </tr>
                 <tr>
                   <td class="">
                     <span class="font-weight-semibold w-50">Local Amount </span>
                   </td>
-                  <td class="">{{ number_format($order->local_amount, 2) }}</td>
+                  <td class="">{!! moneyFormat($order->country, $order->local_amount) !!}</td>
                 </tr>
                 <tr>
                   <td class="">

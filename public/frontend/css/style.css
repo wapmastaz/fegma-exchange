@@ -2803,12 +2803,13 @@ button.timeline-nav-button:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
+    color: #d89d27;
+    /* background: linear-gradient(
         to right,
         #0063e2 0%,
         #00adff 51%,
         #0063e2 100%
-    );
+    ); */
     border-radius: 33% 66% 70% 30%/49% 62% 38% 51%;
 }
 .contact-info h5 {

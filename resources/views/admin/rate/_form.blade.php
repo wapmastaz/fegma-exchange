@@ -5,9 +5,9 @@
       <select id="country" @if ($rate->country != '') disabled @endif
         class="form-control @error('country') is-invalid @enderror" name="country">
         <option value="">--Select--</option>
-        @foreach (countryArray() as $key => $country)
-          <option value="{{ strtolower($key) }}" @if ($rate->country == strtolower($key)) selected @endif>
-            {{ $country }}
+        @foreach (allCountry() as $key => $country)
+          <option value="{{ strtolower($country['code']) }}" @if ($rate->country == strtolower($country['code'])) selected @endif>
+            {{ $country['countryname'] }}
           </option>
         @endforeach
 

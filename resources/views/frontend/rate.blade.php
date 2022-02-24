@@ -51,12 +51,13 @@
                         <td>
                           <span class="icon pe-2">
                             <img src="{{ asset('country/' . $rate->country . '.svg') }}"
-                              style="width: 20px; height: 20px;" alt="{{ getCountryName($rate->country) }} Flag">
+                              style="width: 20px; height: 20px;"
+                              alt="{{ getCountryData($rate->country)['countryname'] }} Flag">
                           </span>
-                          {{ getCountryName($rate->country) }}
+                          {{ getCountryData($rate->country)['countryname'] }}
                         </td>
-                        <td>{{ number_format($rate->value, 2) ?? '' }}</td>
-                        <td>${{ $rate->amount_in_usd }}</td>
+                        <td>{!! moneyFormat($rate->country, $rate->value) !!}</td>
+                        <td>{{ '$' . number_format($rate->amount_in_usd, 2) }}</td>
                       </tr>
                     @endforeach
                   @endif

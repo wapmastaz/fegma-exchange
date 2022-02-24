@@ -130,13 +130,16 @@ class OrderController extends Controller
     public function destroy(Request $request, $uid)
     {
         //find rate by uid
-        $order = Rate::findByUid($uid);
+        $order = Order::findByUid($uid);
         if ($order) {
             $order->delete();
             $notify[] = ['notice', 'Order deleted successful'];
             // redirect back
             return Redirect()->back()->with('notify', $notify);
         }
+        $notify[] = ['error', 'Order not found'];
+        // redirect back
+        return Redirect()->back()->with('notify', $notify);
     }
 
     public function approveOrder(Request $request, $uid)
