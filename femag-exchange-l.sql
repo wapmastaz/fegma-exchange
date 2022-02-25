@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2022 at 05:55 PM
+-- Generation Time: Feb 25, 2022 at 01:40 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -110,6 +110,8 @@ CREATE TABLE `orders` (
   `screenshot` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `approve_image` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `reject_message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reject_image` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `approve_message` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -118,9 +120,9 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `uid`, `title`, `first_name`, `last_name`, `email`, `mobile`, `state`, `country`, `account_number`, `bank_name`, `btc_amount`, `local_amount`, `status`, `screenshot`, `approve_image`, `reject_message`, `created_at`, `updated_at`) VALUES
-(1, '62111aaa41bbf', 'mr', 'Demola', 'Alaofin', 'admin@gmail.com', '09090000000', 'Ondo State', 'ghana', '2342434353533663', 'Access Bank', '1000', '5003000', 1, 'order-FX62111aaa23634.jpg', 'order-FX621245d81da0b.jpg', NULL, '2022-02-19 15:28:26', '2022-02-20 12:44:56'),
-(2, '621248db38027', 'ms', 'Oluwadamilola', 'Muritala', 'wapmastaz7@gmail.com', '07049968703', 'Ondo State', 'ghana', '0705810722', 'Access Bank plc', '1009', '5048027', 2, 'order-FX621248db2788e.jpg', NULL, 'Testing', '2022-02-20 12:57:47', '2022-02-20 13:18:04');
+INSERT INTO `orders` (`id`, `uid`, `title`, `first_name`, `last_name`, `email`, `mobile`, `state`, `country`, `account_number`, `bank_name`, `btc_amount`, `local_amount`, `status`, `screenshot`, `approve_image`, `reject_message`, `reject_image`, `approve_message`, `created_at`, `updated_at`) VALUES
+(4, '6218178b308e4', 'prof', 'Demola', 'Alaofin', 'demolatheophilus8@gmail.com', '09090000000', 'Ondo State', 'ng', '2342434353533663', 'Access Bank', '1000', '400000', 0, 'order-FX62181789b4bf0.png', NULL, NULL, NULL, NULL, '2022-02-24 22:40:59', '2022-02-24 22:40:59'),
+(5, '621817b86398a', 'mrs', 'Oluwadamilola', 'Muritala', 'wapmastaz7@gmail.com', '07049968703', 'Ondo State', 'gh', '0705810722', 'Access Bank plc', '1000', '300000', 0, 'order-FX621817b84c4e0.jpg', NULL, NULL, NULL, NULL, '2022-02-24 22:41:44', '2022-02-24 22:41:44');
 
 -- --------------------------------------------------------
 
@@ -174,7 +176,9 @@ CREATE TABLE `rates` (
 --
 
 INSERT INTO `rates` (`id`, `uid`, `country`, `value`, `amount_in_usd`, `status`, `created_at`, `updated_at`) VALUES
-(2, '62104e6a55e62', 'ghana', '5003', '2', 1, '2022-02-19 00:56:58', '2022-02-19 01:10:20');
+(11, '6216c182bf34d', 'gh', '300', '1', 1, '2022-02-23 22:21:38', '2022-02-23 22:21:38'),
+(12, '6216c1a05ea21', 'ng', '400', '1', 1, '2022-02-23 22:22:08', '2022-02-23 22:22:08'),
+(13, '6216c1c880e44', 'eg', '350', '1', 1, '2022-02-23 22:22:48', '2022-02-23 22:22:48');
 
 -- --------------------------------------------------------
 
@@ -186,6 +190,8 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `username` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -197,8 +203,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$JdqyC9h/z8KgXxYqSozPcO9EuXI5I8csx7CBYS4eDGl0eMTpQbgBa', NULL, '2022-02-16 07:21:27', '2022-02-16 07:21:27');
+INSERT INTO `users` (`id`, `name`, `email`, `avatar`, `username`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin@gmail.com', NULL, 'demmy7', NULL, '$2y$10$JdqyC9h/z8KgXxYqSozPcO9EuXI5I8csx7CBYS4eDGl0eMTpQbgBa', NULL, '2022-02-16 07:21:27', '2022-02-23 13:55:52'),
+(2, 'admin', 'admin@admin.com', NULL, NULL, NULL, '$2y$10$xNrx0d8KmHf6tjUBfRGniOjWQ7jdfdoetsLHXnBXH9dzfQBegZAvO', NULL, '2022-02-23 15:35:55', '2022-02-23 15:35:55');
 
 --
 -- Indexes for dumped tables
@@ -282,7 +289,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -294,13 +301,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `rates`
 --
 ALTER TABLE `rates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
