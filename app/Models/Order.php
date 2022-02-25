@@ -19,6 +19,7 @@ class Order extends Model
         'state',
         'country',
         'account_number',
+        'account_name',
         'bank_name',
         'btc_amount',
         'local_amount',

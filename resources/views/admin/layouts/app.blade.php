@@ -153,12 +153,11 @@
           <div class="app-header header main-header1">
             <div class="container-fluid">
               <div class="d-flex">
-                <a class="header-brand" href="index-2.html">
-                  <img src="../../assets/images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Azea logo">
-                  <img src="../../assets/images/brand/logo1.png" class="header-brand-img dark-logo" alt="Azea logo">
-                  <img src="../../assets/images/brand/favicon.png" class="header-brand-img mobile-logo" alt="Azea logo">
-                  <img src="../../assets/images/brand/favicon1.png" class="header-brand-img darkmobile-logo"
-                    alt="Azea logo">
+                <a class="header-brand" href="{{ route('dashboard') }}">
+                  <img src="{{ asset('project-pictures/logo-2.jpg') }}" class="header-brand-img desktop-lgo" alt="">
+                  <img src="{{ asset('project-pictures/logo-2.jpg') }}" class="header-brand-img desktop-lgo" alt="">
+                  <img src="{{ asset('project-pictures/logo-2.jpg') }}" class="header-brand-img desktop-lgo" alt="">
+                  <img src="{{ asset('project-pictures/logo-2.jpg') }}" class="header-brand-img desktop-lgo" alt="">
                 </a>
                 <div class="app-sidebar__toggle d-flex" data-bs-toggle="sidebar">
                   <a class="open-toggle" href="javascript:void0;">

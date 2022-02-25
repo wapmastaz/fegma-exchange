@@ -32,6 +32,7 @@ class CreateOrder extends FormRequest
             'state' => ['required'],
             'country' => ['required'],
             'account_number' => ['required'],
+            'account_name' => ['required'],
             'bank_name' => ['required'],
             'amount' => ['required'],
             'terms' => ['required'],

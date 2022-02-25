@@ -99,7 +99,7 @@
           <div class="main-profile-contact-list d-lg-flex">
             <div class="media me-5">
               <div class="media-icon bg-secondary-transparent text-secondary me-4">
-                <i class="fe fe-building"></i>
+                <i class="fe fe-briefcase"></i>
               </div>
               <div class="media-body">
                 <h6 class="font-weight-bold mb-1">Bank Name
@@ -116,6 +116,16 @@
                 <h6 class="font-weight-bold mb-1">Account Number
                 </h6>
                 <h6 class="font-weight-bold">{{ $order->account_number }}</h6>
+              </div>
+            </div>
+            <div class="media me-5">
+              <div class="media-icon bg-success-transparent text-success me-4">
+                <i class="fe fe-user"></i>
+              </div>
+              <div class="media-body">
+                <h6 class="font-weight-bold mb-1">Account Name
+                </h6>
+                <h6 class="font-weight-bold">{{ $order->account_name }}</h6>
               </div>
             </div>
           </div>

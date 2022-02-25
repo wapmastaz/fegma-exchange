@@ -201,6 +201,16 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-4">
+                      <label for="account-name">Account Name <span class="text-danger">*</span></label>
+                      <input id="account-name" class="form-control @error('account_name') is-invalid @enderror"
+                        type="text" value="{{ old('account_name') }}" name="account_name">
+                      @error('account_name')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                      @enderror
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-4">
                       <label for="bank-name">Bank Name <span class="text-danger">*</span></label>
                       <input id="bank-name" class="form-control @error('bank_name') is-invalid @enderror" type="text"
                         value="{{ old('bank_name') }}" name="bank_name">

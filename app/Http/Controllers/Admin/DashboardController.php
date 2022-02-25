@@ -100,7 +100,7 @@ class DashboardController extends Controller
             # for save original image
             $originalPath = $avatar->storeAs('avatar', $fileName, 'public');
             // update
-            $user->approve_image = $fileName;
+            $user->avatar = $fileName;
         }
 
         $user->name = $data['name'];

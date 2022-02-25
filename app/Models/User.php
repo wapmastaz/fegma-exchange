@@ -49,7 +49,7 @@ class User extends Authenticatable
         if ($this->avatar == null) {
             $path = asset('admin/images/users/2.jpg');
         } else {
-            $path = asset('storage/profile/' . $this->avatar);
+            $path = asset('storage/avatar/' . $this->avatar);
         }
 
         return $path;
