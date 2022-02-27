@@ -66,7 +66,7 @@ class OrderController extends Controller
             'state' => $data['state'],
             'country' => $data['country'],
             'account_number' => $data['account_number'],
-            'account_name' => $data['account_name'],
+            'account_name' => $data['account_namegi'],
             'bank_name' => $data['bank_name'],
             'btc_amount' => $data['amount'],
             'local_amount' => $rate->value * $data['amount'],
