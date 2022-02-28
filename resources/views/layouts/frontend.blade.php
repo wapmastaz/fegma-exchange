@@ -25,8 +25,8 @@
     <div class="main-navigation">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('project-pictures/logo-2.jpg') }}" alt="logo">
+          <a class="navbar-brand pt-1 pb-0" href="{{ route('home') }}">
+            <img src="{{ asset('logo-2.png') }}" alt="logo" style="width: 165px;">
           </a>
           <div class="mobile-menu-right">
             <a href="#" class="mobile-search-btn search-box-outer"><i class="far fa-search"></i></a>
